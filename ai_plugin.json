@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://raw.githubusercontent.com/YOUR_USERNAME/operator_log/main/openapi.yaml"
+    "url": "https://raw.githubusercontent.com/jollyroger13-glitch/operator_log/refs/heads/main/openapi.yml"
   },
   "logo_url": "https://i.imgur.com/food-icon.png",
   "contact_email": "csandrews@pro.com",
