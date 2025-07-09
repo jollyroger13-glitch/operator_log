@@ -1,0 +1,56 @@
+openapi: 3.0.1
+info:
+  title: Operator Logger API
+  description: Log food, fitness, or relapse data to Google Sheets
+  version: "1.0.0"
+servers:
+  - url: https://script.google.com/macros/s/AKfycbwgReNGUI4pfBA4boJtkWxhz4JZiYBvDr5pUq3UFaC3TxkpaaohikhS8ag_Z1xbh5PG/exec
+paths:
+  /:
+    post:
+      summary: Log an event to Google Sheets
+      operationId: logEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - auth
+                - logType
+              properties:
+                auth:
+                  type: string
+                  example: auth_gpt_log_48b7f5d8c312
+                logType:
+                  type: string
+                  enum: [food, fitness, relapse]
+                  example: food
+                time:
+                  type: string
+                  example: "9:00 AM"
+                meal:
+                  type: string
+                  example: "2 eggs and 3 strips of bacon"
+                calories:
+                  type: integer
+                  example: 320
+                protein:
+                  type: integer
+                  example: 21
+                workout:
+                  type: string
+                  example: "Pushups, Squats, Plank"
+                relapseDetails:
+                  type: string
+                  example: "Urge after argument, relapsed alone at 12:30 PM"
+                mood:
+                  type: string
+                  example: "Anxious"
+                notes:
+                  type: string
+                  example: "Logged via GPT"
+      responses:
+        '200':
+          description: Event logged successfully
