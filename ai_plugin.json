@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Operator Logger",
+  "name_for_model": "operatorLogger",
+  "description_for_human": "Log food, fitness, or relapse events to Google Sheets",
+  "description_for_model": "Log structured data including food intake, workouts, or relapse events to a Google Sheets API endpoint.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://raw.githubusercontent.com/YOUR_USERNAME/operator_log/main/openapi.yaml"
+  },
+  "logo_url": "https://i.imgur.com/food-icon.png",
+  "contact_email": "csandrews@pro.com",
+  "legal_info_url": "https://yourdomain.com/legal"
+}
