@@ -2,9 +2,10 @@ openapi: 3.1.0
 info:
   title: Operator Logger API
   description: Log food, fitness, or relapse data to Google Sheets
-  version: "1.0.0"
+  version: 1.0.0
 servers:
   - url: https://script.google.com/macros/s/AKfycbwgReNGUI4pfBA4boJtkWxhz4JZiYBvDr5pUq3UFaC3TxkpaaohikhS8ag_Z1xbh5PG/exec
+
 paths:
   /:
     post:
@@ -22,35 +23,36 @@ paths:
               properties:
                 auth:
                   type: string
-                  example: auth_gpt_log_48b7f5d8c312
+                  default: auth_gpt_log_48b7f5d8c312
                 logType:
                   type: string
                   enum: [food, fitness, relapse]
-                  example: food
                 time:
                   type: string
-                  example: "9:00 AM"
+                  description: Time of the entry (e.g. "7:30 AM")
                 meal:
                   type: string
-                  example: "2 eggs and 3 strips of bacon"
+                  description: Description of the food eaten
                 calories:
                   type: integer
-                  example: 320
+                  description: Estimated calories
                 protein:
-                  type: integer
-                  example: 21
+                  type: number
+                  description: Estimated protein in grams
                 workout:
                   type: string
-                  example: "Pushups, Squats, Plank"
+                  description: Description of the workout
                 relapseDetails:
                   type: string
-                  example: "Urge after argument, relapsed alone at 12:30 PM"
+                  description: What triggered the relapse or what happened
                 mood:
                   type: string
-                  example: "Anxious"
+                  description: How you were feeling
                 notes:
                   type: string
-                  example: "Logged via GPT"
+                  description: Any additional notes
       responses:
         '200':
-          description: Event logged successfully
+          description: Log successfully created
+        '401':
+          description: Unauthorized – invalid or missing auth key
