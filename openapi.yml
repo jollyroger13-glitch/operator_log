@@ -4,7 +4,7 @@ info:
   description: Log food, fitness, or relapse data to Google Sheets
   version: 1.0.0
 servers:
-  - url: https://script.google.com/macros/s/AKfycbxBU4NoTcoyRIWseIIXNk1Rb7gGg2p_MaPFT2-CUjdah3N1jYZAWp8uiOkZTky1Jeaz/exec
+  - url: https://script.google.com/macros/s/AKfycbwS5GrNyQQJuBXcciUx6kyhjfMQwx-WhVGrP_VvdVpR2eBaiPgjEkHie0UAV6pnpw0o/exec
 
 paths:
   /:
